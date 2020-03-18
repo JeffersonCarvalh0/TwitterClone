@@ -1,17 +1,11 @@
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react-native';
+
 import React from 'react';
-import { TouchableNativeFeedback } from 'react-native';
 import { Text } from 'react-native';
-import CenterView from '../CenterView';
 
-interface Props {
-  onPress: () => void,
-  children: React.ReactNode,
-}
-
-export const Button: React.FC<Props> = ({ onPress, children }) => 
-  <TouchableNativeFeedback onPress={onPress}>{children}</TouchableNativeFeedback>;
+import CenterView from '../../../storybook/stories/CenterView';
+import Button from './Button';
 
 storiesOf('Button', module)
   .addDecorator((getStory: () => React.FC) => <CenterView>{getStory()}</CenterView>)

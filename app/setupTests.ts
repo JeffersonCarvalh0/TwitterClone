@@ -1,11 +1,11 @@
-import 'react-native';
-import Adapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import 'react-native';
 
 /**
  * Set up DOM in node.js environment for Enzyme to mount to
  */
-import { JSDOM, DOMWindow } from 'jsdom';
+import { DOMWindow, JSDOM } from 'jsdom';
 
 const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 const { window } = jsdom;
@@ -19,7 +19,7 @@ interface Global extends NodeJS.Global {
 }
 
 const globalNode: Global = {
-  window: window,
+  window: {window},
   document: window.document,
   navigator: {
     userAgent: 'node-js',
