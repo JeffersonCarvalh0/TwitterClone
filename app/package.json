@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "tslint --project tsconfig.json",
-    "ts:watch": "tsc -w"
+    "ts:watch": "tsc -w",
+    "storybook": "start-storybook -p 7007"
   },
   "dependencies": {
     "react": "16.9.0",
@@ -18,6 +19,11 @@
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addons": "^5.3.17",
+    "@storybook/react-native": "^5.3.17",
+    "@storybook/react-native-server": "^5.3.17",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^24.0.24",
@@ -27,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.5.1",
