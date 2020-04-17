@@ -11,11 +11,11 @@ storiesOf("Button", module)
   .addDecorator((getStory: () => React.FC) => (
     <CenterView>{getStory()}</CenterView>
   ))
-  .add("with text", () => (
+  .add("Default", () => (
     <Button onPress={action("clicked-text")}>Hello Button</Button>
   ))
-  .add("with some emoji", () => (
-    <Button onPress={action("clicked-emoji")}>
-      <Text>😀 😎 👍 💯</Text>
+  .add("Expanded", () => (
+    <Button onPress={action("clicked-expanded")} expanded>
+      Create account
     </Button>
   ));

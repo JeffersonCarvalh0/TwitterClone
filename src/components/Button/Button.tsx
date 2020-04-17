@@ -2,34 +2,33 @@ import React from "react";
 import { TouchableNativeFeedback } from "react-native";
 import styled from "styled-components/native";
 
-const Splash = styled.TouchableNativeFeedback`
-  border-radius: 50px;
-`;
+export interface Props {
+  onPress?: () => void;
+  children: React.ReactNode;
+  expanded?: boolean;
+}
 
 const Container = styled.View`
   background-color: #1da1f2;
   padding: 10px;
   border-radius: 50px;
-  font-weight: bold;
-  color: white;
+  overflow: hidden;
+  align-self: ${(props: Props) => (props.expanded ? "stretch" : "center")};
 `;
 
 const ButtonText = styled.Text`
   color: white;
+  text-align: center;
   font-weight: bold;
+  font-size: ${(props: Props) => (props.expanded ? "20px" : "14px")};
 `;
 
-export interface Props {
-  onPress?: () => void;
-  children: React.ReactNode;
-}
-
-const Button: React.FC<Props> = ({ onPress, children }) => (
-  <Splash onPress={onPress}>
-    <Container>
-      <ButtonText>{children}</ButtonText>
+const Button = ({ onPress, children, expanded = false }: Props) => (
+  <TouchableNativeFeedback onPress={onPress} useForeground={true}>
+    <Container expanded={expanded}>
+      <ButtonText expanded={expanded}>{children}</ButtonText>
     </Container>
-  </Splash>
+  </TouchableNativeFeedback>
 );
 
 export default Button;
